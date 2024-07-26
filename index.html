@@ -5,11 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <script>
+        function f(ev) {
+            // console.log(ev);
+            console.log(ev.target);
+            ev.target.innerHTML = "H1";
+            function f(add) {
+                console.log(add.target);
+                add.target.innerHTML = "h2";
+
+            }
+
+
+            let d = document.getElementById("t1");
+            console.log(d);
+            console.log(d.type);
+            d.value = "radio";
+            // console.log(d.type);
+        }
+        function add() {
+            let v1 = Number(document.getElementById("a").value);
+            let v2 = Number(document.getElementById("b").value);
+            let sum = v1 + v2;
+            document.getElementById("result").innerHTML = sum;
+        }
+    </script>
 </head>
 
 <body>
     <h1>My Home</h1>
     <a href="first.html">First</a>
+    <input type="text" id="t1" placeholder="Your Name">
+    <br>
 </body>
+text<input type="text">
+<br>
+<button onclick="f(event)">submit</button>
+<br>
+number<input id="a" type="number">
+number<input id="b" type="number">
+<h2>Result</h2>
+<h2 id="result"> </h2>
+<button onclick="add()">Add</button>
+
+
 
 </html>
