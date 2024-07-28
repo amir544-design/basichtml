@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function f() {
+        // console.log("Hello");
+        let v1 = Number(document.getElementById("a").value);
+        let v2 = Number(document.getElementById("b").value);
+        let result = "Not selected";
+        let radiobuttons = document.getElementsByName("sport");
+        // console.log(radiobuttons);
+        let n = radiobuttons.length;
+
+        v1 = Number(v1);
+        v2 = Number(v2);
+
+        // console.log(n);
+        for (let i = 0; i <= n - 1; i++) {
+            if (radiobuttons[i].checked) {
+
+                if (i == 0)
+                    result = v1 + v2;
+                else if (i == 1)
+                    result = v1 - v2;
+                else if (i == 2)
+                    result = v1 * v2;
+
+
+            }
+
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+
+<body>
+    number<input id="a" type="number">
+    number<input id="b" type="number">
+
+    <p id="result"></p>
+    <label>Add<input name="sport" type="radio"></label>
+
+
+    <label>
+        Sub
+        <input name="sport" type="radio"></label>
+
+
+    <label>
+        Multiply
+        <input name="sport" type="radio"></label>
+    <br>
+    <input onclick="f()" value="Click" type="submit">
+</body>
+
+
+</html>
